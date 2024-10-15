@@ -1,23 +1,24 @@
-#---
+# ---
 # Excerpted from "Real-World Event Sourcing",
 # published by The Pragmatic Bookshelf.
 # Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/khpes for more book information.
-#---
+# ---
 defmodule LunarFrontiers.App.Router do
   alias LunarFrontiers.App.Commands.{
     AdvanceGameloop,
     AdvanceConstruction,
     SpawnSite,
-    SpawnBuilding
+    SpawnBuilding,
+    StartGame
   }
 
   alias LunarFrontiers.App.Aggregates.{
-    Gameloop,
+    Building,
     ConstructionSite,
-    Building
+    Gameloop
   }
 
   use Commanded.Commands.Router
@@ -37,7 +38,7 @@ defmodule LunarFrontiers.App.Router do
     prefix: "bldg-"
   )
 
-  dispatch([AdvanceGameloop], to: Gameloop)
+  dispatch([AdvanceGameloop, StartGame], to: Gameloop)
   dispatch([SpawnSite, AdvanceConstruction], to: ConstructionSite)
   dispatch([SpawnBuilding], to: Building)
 end

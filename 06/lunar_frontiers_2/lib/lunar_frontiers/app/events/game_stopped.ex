@@ -6,7 +6,7 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/khpes for more book information.
 # ---
-defmodule LunarFrontiers.App.Events.SiteSpawned do
+defmodule LunarFrontiers.App.Events.GameStopped do
   @derive Jason.Encoder
-  defstruct [:site_id, :site_type, :location, :tick, :remaining_ticks, :player_id, :game_id]
+  defstruct [:game_id]
 end

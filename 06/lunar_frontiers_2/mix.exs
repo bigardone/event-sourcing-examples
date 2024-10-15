@@ -1,11 +1,11 @@
-#---
+# ---
 # Excerpted from "Real-World Event Sourcing",
 # published by The Pragmatic Bookshelf.
 # Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/khpes for more book information.
-#---
+# ---
 defmodule LunarFrontiers.MixProject do
   use Mix.Project
 
@@ -32,9 +32,9 @@ defmodule LunarFrontiers.MixProject do
     [
       {:commanded, "~> 1.4"},
       {:commanded_eventstore_adapter, "~> 1.4"},
-      {:jason, "~> 1.4"}
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:jason, "~> 1.4"},
+      {:redix, "~> 1.5"},
+      {:uuid, "~> 1.1"}
     ]
   end
 end
